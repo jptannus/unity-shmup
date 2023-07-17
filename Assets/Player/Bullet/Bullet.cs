@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class script : MonoBehaviour
+public class Bullet : MonoBehaviour
 {
     public float speed = 14;
 
@@ -21,7 +21,17 @@ public class script : MonoBehaviour
 
         if (this.transform.position.y > Y_THRESHOLD)
         {
-            Destroy(this.gameObject);
+            SelfDestroy();
         }
+    }
+
+    void OnTriggerEnter2D(Collider2D collider) 
+    {
+        SelfDestroy();
+    }
+
+    void SelfDestroy()
+    {
+        Destroy(this.gameObject);
     }
 }
