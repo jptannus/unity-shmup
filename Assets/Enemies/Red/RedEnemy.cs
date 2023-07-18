@@ -36,7 +36,6 @@ public class RedEnemy : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collider) 
     {
-        Debug.Log(collider.tag);
         if (collider.tag is "PlayerBullet") 
         {
             this.OnShot();

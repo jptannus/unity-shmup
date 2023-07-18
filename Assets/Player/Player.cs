@@ -14,6 +14,8 @@ public class Player : MonoBehaviour
     int maxLife = 3;
     int currentLife;
     public LifeCounter lifeCounter;
+    const float X_BOUNDARY = 3.14f;
+    const float Y_BOUNDARY = 4.39f;
 
     // Start is called before the first frame update
     void Start()
@@ -30,21 +32,42 @@ public class Player : MonoBehaviour
 
     void UpdatePosition(float multiplier)
     {
-        float h = 0;
-        if(Input.GetButton("Horizontal")) 
-        {
-            h = Input.GetAxis("Horizontal");
-        }
-
-        float v = 0;
-        if(Input.GetButton("Vertical")) 
-        {
-            v = Input.GetAxis("Vertical");
-        }
+        float h = this.GetHorizontalMoviment();
+        float v = this.GetVerticalMoviment();
         Vector3 tempVect = new Vector3(h, v, 0);
         tempVect = tempVect.normalized * multiplier;
 
         this.transform.position += tempVect;
+    }
+
+    float GetHorizontalMoviment()
+    {
+        float h = 0;
+        if(Input.GetButton("Horizontal")) 
+        {
+            float axis = Input.GetAxis("Horizontal");
+            float currentX = this.transform.position.x;
+            if ((axis > 0 && currentX < X_BOUNDARY) || (axis < 0 && currentX > -X_BOUNDARY))
+            {
+                h = axis;
+            }
+        }
+        return h;
+    }
+
+    float GetVerticalMoviment()
+    {
+        float v = 0;
+        if(Input.GetButton("Vertical")) 
+        {
+            float axis = Input.GetAxis("Vertical");
+            float currentY = this.transform.position.y;
+            if ((axis > 0 && currentY < Y_BOUNDARY) || (axis < 0 && currentY > -Y_BOUNDARY))
+            {
+                v = axis;
+            }
+        }
+        return v;
     }
 
     void UpdateShooting(float deltaTime) 
