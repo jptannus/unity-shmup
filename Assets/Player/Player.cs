@@ -11,18 +11,21 @@ public class Player : MonoBehaviour
     private float shootingDelay = 0;
     private const float SHOOTER_Y = 0.1f;
     private const float SHOOTER_X = 0.45f;
+    private int maxLife = 3;
+    private int currentLife;
+    public LifeCounter lifeCounter;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        this.FillHeath();
     }
 
     // Update is called once per frame
     void Update()
     {
-        UpdatePosition(this.speed * Time.deltaTime);
-        UpdateShooting(Time.deltaTime);
+        this.UpdatePosition(this.speed * Time.deltaTime);
+        this.UpdateShooting(Time.deltaTime);
     }
 
     private void UpdatePosition(float multiplier)
@@ -61,15 +64,15 @@ public class Player : MonoBehaviour
         else if(Input.GetButton("Fire1"))
         {
             this.isShooting = true;
-            Shoot();
+            this.Shoot();
         }
     }
 
     private void Shoot()
     {
         if (this.bulletPrefab) {
-            CreateBulletLeftShooter();
-            CreateBulletRightShooter();
+            this.CreateBulletLeftShooter();
+            this.CreateBulletRightShooter();
         }
     }
 
@@ -78,18 +81,39 @@ public class Player : MonoBehaviour
         Vector3 position = this.transform.position;
         position.x -= SHOOTER_X;
         position.y += SHOOTER_Y;
-        CreateBullet(position);
+        this.CreateBullet(position);
     }
     private void CreateBulletRightShooter()
     {
         Vector3 position = this.transform.position;
         position.x += SHOOTER_X;
         position.y += SHOOTER_Y;
-        CreateBullet(position);
+        this.CreateBullet(position);
     }
 
     private void CreateBullet(Vector3 position)
     {
         Instantiate(bulletPrefab, position, Quaternion.identity);
     }
+
+    private void FillHeath() => this.currentLife = this.maxLife;
+    private void ReduceHealth()
+    {
+        this.currentLife--;
+        lifeCounter.SetValue(this.currentLife);
+        if (this.currentLife <= 0)
+        {
+            this.SelfDestroy();
+        }
+    }
+    private void GainHealth()
+    {
+        if (this.currentLife < this.maxLife)
+        {
+            this.currentLife++;
+            lifeCounter.SetValue(this.currentLife);
+        }
+    }
+
+    private void SelfDestroy() => Destroy(this.gameObject);
 }

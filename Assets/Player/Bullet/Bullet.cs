@@ -21,13 +21,13 @@ public class Bullet : MonoBehaviour
 
         if (this.transform.position.y > Y_THRESHOLD)
         {
-            SelfDestroy();
+            this.SelfDestroy();
         }
     }
 
     void OnTriggerEnter2D(Collider2D collider) 
     {
-        SelfDestroy();
+        this.SelfDestroy();
     }
 
     void SelfDestroy()

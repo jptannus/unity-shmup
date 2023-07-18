@@ -20,7 +20,7 @@ public class RedEnemy : MonoBehaviour
     {
         if (collider.tag is "bullet") 
         {
-            OnShot();
+            this.OnShot();
         }
     }
 
