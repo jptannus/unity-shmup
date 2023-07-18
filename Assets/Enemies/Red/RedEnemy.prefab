@@ -51,6 +51,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 3
   shouldMove: 1
+  movementStyle: 0
 --- !u!114 &5547466641038222579
 MonoBehaviour:
   m_ObjectHideFlags: 0

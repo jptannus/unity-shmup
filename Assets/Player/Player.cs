@@ -32,15 +32,15 @@ public class Player : MonoBehaviour
 
     void UpdatePosition(float multiplier)
     {
-        float h = this.GetHorizontalMoviment();
-        float v = this.GetVerticalMoviment();
+        float h = this.GetHorizontalMovement();
+        float v = this.GetVerticalMovement();
         Vector3 tempVect = new Vector3(h, v, 0);
         tempVect = tempVect.normalized * multiplier;
 
         this.transform.position += tempVect;
     }
 
-    float GetHorizontalMoviment()
+    float GetHorizontalMovement()
     {
         float h = 0;
         if(Input.GetButton("Horizontal")) 
@@ -55,7 +55,7 @@ public class Player : MonoBehaviour
         return h;
     }
 
-    float GetVerticalMoviment()
+    float GetVerticalMovement()
     {
         float v = 0;
         if(Input.GetButton("Vertical")) 
