@@ -66,6 +66,10 @@ MonoBehaviour:
   delayBetweenShots: 1
   shouldShoot: 1
   bulletPrefab: {fileID: 6659916069854499545, guid: a3fe52b27b4a8204781aaabb49121635, type: 3}
+  numberOfBullets: 2
+  paddingBetweenBullets: 0.1
+  bulletOffset: {x: 0, y: -0.6}
+  bulletWidth: 0.2
 --- !u!114 &8732413056106583065
 MonoBehaviour:
   m_ObjectHideFlags: 0
