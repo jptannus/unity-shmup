@@ -5,13 +5,7 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     public float speed = 14;
-
-    private const int Y_THRESHOLD = 10;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    const int Y_THRESHOLD = 10;
 
     // Update is called once per frame
     void Update()
@@ -27,7 +21,10 @@ public class Bullet : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collider) 
     {
-        this.SelfDestroy();
+        if (collider.tag is "Enemy")
+        {
+            this.SelfDestroy();
+        }
     }
 
     void SelfDestroy()

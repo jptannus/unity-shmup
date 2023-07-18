@@ -4,18 +4,6 @@ using UnityEngine;
 
 public class LifeCounter : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void SetValue(int value)
     {
         for(int i = 0; i < this.transform.childCount; i++)
@@ -30,13 +18,13 @@ public class LifeCounter : MonoBehaviour
             }
         }
     }
-    private void Disable(Transform heart)
+    void Disable(Transform heart)
     {
         if (heart) {
             heart.gameObject.SetActive(false);
         }
     }
-    private void Enable(Transform heart)
+    void Enable(Transform heart)
     {
         if (heart) {
             heart.gameObject.SetActive(true);

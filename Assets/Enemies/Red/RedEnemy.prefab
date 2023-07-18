@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2019818961010251582}
   m_Layer: 0
   m_Name: RedEnemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -99,6 +99,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a431f1fa2a660a6489dd4702d3fb174b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  delayBetweenShots: 1
+  bulletPrefab: {fileID: 6659916069854499545, guid: a3fe52b27b4a8204781aaabb49121635, type: 3}
 --- !u!61 &3946329418162489981
 BoxCollider2D:
   m_ObjectHideFlags: 0

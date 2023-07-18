@@ -7,12 +7,12 @@ public class Player : MonoBehaviour
     public float speed = 8;
     public GameObject bulletPrefab;
     public float delayBetweenShots = 0.3f;
-    private bool isShooting = false;
-    private float shootingDelay = 0;
-    private const float SHOOTER_Y = 0.1f;
-    private const float SHOOTER_X = 0.45f;
-    private int maxLife = 3;
-    private int currentLife;
+    bool isShooting = false;
+    float shootingDelay = 0;
+    const float SHOOTER_Y = 0.1f;
+    const float SHOOTER_X = 0.45f;
+    int maxLife = 3;
+    int currentLife;
     public LifeCounter lifeCounter;
 
     // Start is called before the first frame update
@@ -28,7 +28,7 @@ public class Player : MonoBehaviour
         this.UpdateShooting(Time.deltaTime);
     }
 
-    private void UpdatePosition(float multiplier)
+    void UpdatePosition(float multiplier)
     {
         float h = 0;
         if(Input.GetButton("Horizontal")) 
@@ -47,7 +47,7 @@ public class Player : MonoBehaviour
         this.transform.position += tempVect;
     }
 
-    private void UpdateShooting(float deltaTime) 
+    void UpdateShooting(float deltaTime) 
     {
         if (this.isShooting)
         {
@@ -68,7 +68,7 @@ public class Player : MonoBehaviour
         }
     }
 
-    private void Shoot()
+    void Shoot()
     {
         if (this.bulletPrefab) {
             this.CreateBulletLeftShooter();
@@ -76,14 +76,14 @@ public class Player : MonoBehaviour
         }
     }
 
-    private void CreateBulletLeftShooter()
+    void CreateBulletLeftShooter()
     {
         Vector3 position = this.transform.position;
         position.x -= SHOOTER_X;
         position.y += SHOOTER_Y;
         this.CreateBullet(position);
     }
-    private void CreateBulletRightShooter()
+    void CreateBulletRightShooter()
     {
         Vector3 position = this.transform.position;
         position.x += SHOOTER_X;
@@ -91,13 +91,13 @@ public class Player : MonoBehaviour
         this.CreateBullet(position);
     }
 
-    private void CreateBullet(Vector3 position)
+    void CreateBullet(Vector3 position)
     {
         Instantiate(bulletPrefab, position, Quaternion.identity);
     }
 
-    private void FillHeath() => this.currentLife = this.maxLife;
-    private void ReduceHealth()
+    void FillHeath() => this.currentLife = this.maxLife;
+    void ReduceHealth()
     {
         this.currentLife--;
         lifeCounter.SetValue(this.currentLife);
@@ -106,7 +106,7 @@ public class Player : MonoBehaviour
             this.SelfDestroy();
         }
     }
-    private void GainHealth()
+    void GainHealth()
     {
         if (this.currentLife < this.maxLife)
         {
@@ -115,5 +115,13 @@ public class Player : MonoBehaviour
         }
     }
 
-    private void SelfDestroy() => Destroy(this.gameObject);
+    void SelfDestroy() => Destroy(this.gameObject);
+
+    void OnTriggerEnter2D(Collider2D collider) 
+    {
+        if (collider.tag is "EnemyBullet") 
+        {
+            this.ReduceHealth();
+        }
+    }
 }

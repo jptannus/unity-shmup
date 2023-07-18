@@ -300,26 +300,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3946329418162489981, guid: 42405294aa65ac94880a631c99ffc535, type: 3}
-      propertyPath: m_Size.x
-      value: 0.65993834
-      objectReference: {fileID: 0}
-    - target: {fileID: 3946329418162489981, guid: 42405294aa65ac94880a631c99ffc535, type: 3}
-      propertyPath: m_Size.y
-      value: 0.6013942
-      objectReference: {fileID: 0}
-    - target: {fileID: 3946329418162489981, guid: 42405294aa65ac94880a631c99ffc535, type: 3}
-      propertyPath: m_Offset.x
-      value: -0.010620356
-      objectReference: {fileID: 0}
-    - target: {fileID: 3946329418162489981, guid: 42405294aa65ac94880a631c99ffc535, type: 3}
-      propertyPath: m_Offset.y
-      value: 0.111311436
-      objectReference: {fileID: 0}
     - target: {fileID: 5159477313823274656, guid: 42405294aa65ac94880a631c99ffc535, type: 3}
       propertyPath: m_Name
       value: RedEnemy
       objectReference: {fileID: 0}
+    - target: {fileID: 5372373887707148259, guid: 42405294aa65ac94880a631c99ffc535, type: 3}
+      propertyPath: bulletPrefab
+      value: 
+      objectReference: {fileID: 6659916069854499545, guid: a3fe52b27b4a8204781aaabb49121635, type: 3}
     - target: {fileID: 9075012138921064626, guid: 42405294aa65ac94880a631c99ffc535, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -680,6 +668,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 570578381390792327, guid: 6e6c90b5f874dcb489216d2c62d85577, type: 3}
+      propertyPath: m_Size.x
+      value: 0.26674357
+      objectReference: {fileID: 0}
+    - target: {fileID: 570578381390792327, guid: 6e6c90b5f874dcb489216d2c62d85577, type: 3}
+      propertyPath: m_Size.y
+      value: 0.5876365
+      objectReference: {fileID: 0}
+    - target: {fileID: 570578381390792327, guid: 6e6c90b5f874dcb489216d2c62d85577, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.0014760643
+      objectReference: {fileID: 0}
+    - target: {fileID: 570578381390792327, guid: 6e6c90b5f874dcb489216d2c62d85577, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.081181765
+      objectReference: {fileID: 0}
     - target: {fileID: 1693553725080175801, guid: 6e6c90b5f874dcb489216d2c62d85577, type: 3}
       propertyPath: lifeCounter
       value: 
