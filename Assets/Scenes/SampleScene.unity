@@ -227,10 +227,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: RedEnemy
       objectReference: {fileID: 0}
-    - target: {fileID: 5372373887707148259, guid: 42405294aa65ac94880a631c99ffc535, type: 3}
-      propertyPath: bulletPrefab
-      value: 
-      objectReference: {fileID: 6659916069854499545, guid: a3fe52b27b4a8204781aaabb49121635, type: 3}
     - target: {fileID: 9075012138921064626, guid: 42405294aa65ac94880a631c99ffc535, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -278,7 +274,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5159477313823274656, guid: 42405294aa65ac94880a631c99ffc535, type: 3}
+      insertIndex: 4
+      addedObject: {fileID: 9075012138411518944}
   m_SourcePrefab: {fileID: 100100000, guid: 42405294aa65ac94880a631c99ffc535, type: 3}
 --- !u!114 &1272501117 stripped
 MonoBehaviour:
@@ -352,6 +351,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 61a6fba6b93dc4a488d5339c2f9a6cb7, type: 3}
+--- !u!1 &5159477313330505167 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5159477313823274656, guid: 42405294aa65ac94880a631c99ffc535, type: 3}
+  m_PrefabInstance: {fileID: 585044847}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5428171796747535286
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -441,3 +445,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6e6c90b5f874dcb489216d2c62d85577, type: 3}
+--- !u!114 &9075012138411518944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5159477313330505167}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4aa1fea392622b44fb222c1d714ae6b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxLife: 1
+  isInvencible: 0
