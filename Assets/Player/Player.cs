@@ -142,7 +142,7 @@ public class Player : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collider) 
     {
-        if (collider.tag is "EnemyBullet") 
+        if (collider.tag is "EnemyBullet" || collider.tag is "Enemy") 
         {
             this.ReduceHealth();
         }

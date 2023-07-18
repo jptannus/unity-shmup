@@ -100,6 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   delayBetweenShots: 1
+  shouldShoot: 1
   bulletPrefab: {fileID: 6659916069854499545, guid: a3fe52b27b4a8204781aaabb49121635, type: 3}
 --- !u!61 &3946329418162489981
 BoxCollider2D:

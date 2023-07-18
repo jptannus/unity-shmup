@@ -7,6 +7,7 @@ public class RedEnemy : MonoBehaviour
     public float delayBetweenShots = 1.0f;
     bool isShooting = false;
     float shootingDelay = 0;
+    public bool shouldShoot = true;
     public GameObject bulletPrefab;
     // Start is called before the first frame update
     void Start()
@@ -49,6 +50,9 @@ public class RedEnemy : MonoBehaviour
 
     void ShootBullet()
     {
-        Instantiate(bulletPrefab, this.transform.position, Quaternion.identity);
+        if(this.shouldShoot) 
+        {
+            Instantiate(bulletPrefab, this.transform.position, Quaternion.identity);
+        }
     }
 }
