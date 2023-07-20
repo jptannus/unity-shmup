@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class PlayerCanHit : MonoBehaviour
 {
-    public int maxLife = 1;
     int currentLife;
+    [SerializeField]
+    int maxLife = 1;
+    [SerializeField]
     public bool isInvencible = false;
     void Start()
     {

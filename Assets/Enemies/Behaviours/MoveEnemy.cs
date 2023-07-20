@@ -12,10 +12,13 @@ public enum MovementOptions
 public class MoveLeftToRight : MonoBehaviour
 {
     const float SCREEN_X_LIMIT = 3.14f;
-    public float speed = 3;
     int moveDirection = 1;
-    public bool shouldMove = true;
-    public MovementOptions movementStyle; 
+    [SerializeField]
+    float speed = 3;
+    [SerializeField]
+    bool shouldMove = true;
+    [SerializeField]
+    MovementOptions movementStyle; 
     // Start is called before the first frame update
     void Start()
     {

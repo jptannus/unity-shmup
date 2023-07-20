@@ -4,18 +4,22 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public float speed = 8;
-    public GameObject bulletPrefab;
-    public float delayBetweenShots = 0.3f;
     bool isShooting = false;
     float shootingDelay = 0;
     const float SHOOTER_Y = 0.1f;
     const float SHOOTER_X = 0.45f;
     int maxLife = 3;
     int currentLife;
-    public LifeCounter lifeCounter;
     const float X_BOUNDARY = 3.14f;
     const float Y_BOUNDARY = 4.39f;
+    [SerializeField]
+    float speed = 8;
+    [SerializeField]
+    GameObject bulletPrefab;
+    [SerializeField]
+    float delayBetweenShots = 0.3f;
+    [SerializeField]
+    LifeCounter lifeCounter;
 
     // Start is called before the first frame update
     void Start()

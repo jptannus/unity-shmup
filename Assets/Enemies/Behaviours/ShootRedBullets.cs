@@ -5,15 +5,22 @@ using UnityEngine;
 public class ShootRedBullets : MonoBehaviour
 {
     
-    public float delayBetweenShots = 1.0f;
     bool isShooting = false;
     float shootingDelay = 0;
-    public bool shouldShoot = true;
-    public GameObject bulletPrefab;
-    public int numberOfBullets = 1;
-    public float paddingBetweenBullets = 0.1f;
-    public Vector2 bulletOffset = new Vector2(0,0);
-    public float bulletWidth = 0.2f;
+    [SerializeField]
+    float delayBetweenShots = 1.0f;
+    [SerializeField]
+    bool shouldShoot = true;
+    [SerializeField]
+    GameObject bulletPrefab;
+    [SerializeField]
+    int numberOfBullets = 1;
+    [SerializeField]
+    float paddingBetweenBullets = 0.1f;
+    [SerializeField]
+    Vector2 bulletOffset = new Vector2(0,0);
+    [SerializeField]
+    float bulletWidth = 0.2f;
 
     // Update is called once per frame
     void Update()
